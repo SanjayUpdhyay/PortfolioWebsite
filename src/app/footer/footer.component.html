@@ -1,0 +1,9 @@
+<div class="Userdetails">
+    <div class="details">
+        <h1 class="UserName">{{UserName | titlecase}}</h1>
+    </div>
+    <div class="SocialMedias">
+        <a *ngFor='let social of SocialMedia' class="SocialMedia" href={{social.link}} target="_blank">{{social.Name |
+            lowercase}}</a>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+.TextArea {
+    width: 18em;
+}
+
+.Skill-Details-Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+}
+
+.Skill-Content {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+.Button {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.012rem;
+    text-align: center;
+    width: 13.8rem;
+    height: 3.5rem;
+    border-radius: 0.75em;
+    border: 0rem;
+    background-color: var(--Button-Text-Color);
+    color: var(--Main-Text-Color);
+    border-width: 0rem 0rem 0rem 0rem;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Button:hover {
+    opacity: 1;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--Button-background-Color);
+}
+
+.Skill-buttons {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.selectedButton {
+    background-color: var(--Button-background-Color);
+    color: var(--Button-Text-Color);
+    opacity: 1;
+}
+
+.selectedButton:hover{
+    color: var(--Button-Text-Color);
+}
+
+
+.ImgBack {
+    min-height: max(30vw);
+    box-shadow: 1rem 1rem 0rem -.2rem var(--Main-Text-Color);
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.Skill_img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.Skills {
+    padding: 0rem 2vw 0rem 0rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw;
+}
+
+.skillName {
+    /* box-shadow: 1.2rem 3.2rem 6.5rem -4.9rem var(--Button-background-Color); */
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.SkillImg{
+    mix-blend-mode: multiply;
+    width: 14rem;
+}
+
+.mainFlip{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.filp{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+}
+
+.filp:hover{
+    transform: rotateY(180deg);
+}
+
+.upper{
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.bottom{
+    display: grid;
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+}
+
+.Progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.percentage {
+    position: absolute;
+}
+
+.PerText {
+    font-size: 1.6rem;
+    font-weight: 800;
+    opacity: 0.9;
+}
+
+.skilled {
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 2.4rem;
+    opacity: 0.7;
+    text-align: center;
+    margin: 1rem 0rem;
+}
+
+.mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: var(--Button-background-Color);
+    width: 10px;
+}
+
+/* ------------------- Media Query ----------------------------- */
+
+
+@media (max-width:720px) {
+    .Skill-Details-Container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width:500px) {
+    .Skills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,105 @@
+
+.Photo-Main-Container {
+    padding: 0rem 0rem 0rem 1.5vw;
+    display: grid;
+}
+
+.Userdetails {
+    width: min(var(--Photo-Size));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Button {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 7vw 0.8rem 0rem;
+    border-radius: 1.25em;
+    border: 0rem;
+    text-align: center;
+    letter-spacing: 0.012rem;
+    width: 10em;
+    height: 3em;
+    background-color: var(--Button-background-Color);
+    color: var(--Button-Text-Color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Button:hover {
+    font-size: 1.22rem;
+}
+
+.Photo-Container {
+    display: grid;
+    grid-template-columns: var(--Photo-Size) auto;
+}
+
+.SocialMedia-Container {
+    display: flex;
+    writing-mode: vertical-lr;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image-Container {
+    overflow: hidden;
+}
+
+.skill {
+    position: relative;
+}
+
+.image-Container {
+    width: min(var(--Photo-Size));
+}
+
+.Main-Img {
+    width: min(100%);
+    height: max(85vh);
+    object-fit: cover;
+}
+
+.Skill-Container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.about {
+    font-size: 3.6rem;
+    font-weight: 800;
+    text-align: center;
+    color: var(--Text-Color);
+}
+
+.Count {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--Text-Color);
+    margin: 0.1rem;
+}
+
+.Main-Box {
+    font-size: 7.2rem;
+    padding: 2rem;
+    color: var(--Main-Text-Color);
+    background-color: var(--Text-Color);
+    border-radius: 0.45em;
+    border: 0rem;
+}
+
+.Main-Count {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--Main-Text-Color);
+    margin: 0.2rem;
+}
+
+

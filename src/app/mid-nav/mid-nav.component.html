@@ -1,0 +1,5 @@
+<div class="Mid-navigation">
+    <ul [ngClass]="MainList" >
+        <li  *ngFor='let Navlist of navItem' type="none"><a [ngClass]="List" href="{{Navlist.id}}">{{Navlist.Name | uppercase}}</a></li>
+     </ul>
+</div>

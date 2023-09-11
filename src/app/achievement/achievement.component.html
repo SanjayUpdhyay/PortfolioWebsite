@@ -1,0 +1,48 @@
+<div class="Main-Container Project-Container">
+    <div class="TextArea">
+        <div class="Text">{{BoxText | titlecase}}</div>
+        <div class="buttons"  *ngIf="IsRightScreen && IsMobile">
+            <button class="Button-Left" (click)="ProjectLeftClick()"><mat-icon [className]="Left">arrow_right_alt</mat-icon></button>
+            <button class="Button-Right" (click)="ProjectRightClick()"><mat-icon [className]="Right">arrow_right_alt</mat-icon></button>
+        </div>
+    </div>
+    <div class="Project-Content">
+        <div class="img-Content">
+            <div class="Main">
+                <div class="Main-Img" [ngClass]="{'Main-Img':true, 'Fade-animation' : (IsAnimation)}">
+                    <img class="Image" alt="Project-Image" src={{mainImage}}>
+                </div>
+                <div class="Buttoned" *ngIf="Enable && IsMobile">
+                    <button class="Button-Left" (click)="ImgLeftClick()"><mat-icon [className]="Left">arrow_right_alt</mat-icon></button>
+                    <button class="Button-Right" (click)="ImgRightClick()"><mat-icon [className]="Right">arrow_right_alt</mat-icon></button>
+                </div>
+            </div>
+            <div class="restImg">
+                <div class="rest" *ngFor="let image of Images">
+                    <div class="Imaged"><img alt="Project-Image" (click)="ChangeMainImage(image)"
+                            [ngClass]="{'Images':true, 'SelectedImg' : (image === mainImage)}" src={{image}}></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="textcontent">
+            <div class="Buttons">
+                <button [ngClass]="{'Button':true, 'selectedButton' : (Button === SelectButton)}" (click)="ChangeProject(Button)"
+                    *ngFor="let Button of FullDetails">{{Button.ProjectType | uppercase}}</button>
+            </div>
+            <div class="mainConten">
+                <div [ngClass]="{'contents':true, 'Fade-animation' : (IsAnimation)}">
+                    <h5 class="Year">{{ProjectDeatils.Year | uppercase}}</h5>
+                    <h4 class="Institute">{{ProjectDeatils.For | titlecase}}</h4>
+                    <h3 class="Course-Name">{{ProjectDeatils.ProjectName | uppercase}}</h3>
+                    <p [innerHTML]="ProjectDeatils.Description" class="Description"></p>
+                    <div class="Skills">
+                        <ul class="Skillbox">
+                            <li class="skill" *ngFor='let skills of ProjectDeatils.ProjectSkills' type="none">{{skills | uppercase}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div [ngClass]="{'Main-Container':true, 'TextAlign' : (!ContactButton) , 'AfterClick' : (ContactButton) ,'Fade-animation' : (ContactButton)}">
+    <div class="ContactMe">
+        <div class="Contact-details-Container">
+            <div class="Contact-Text">
+                <h1 class="Lets">Let's Talk</h1>
+                <button id="ContactMeButton" class="Contact" (click)="Contact()">Contact Me</button>
+            </div>
+            <div class="User-Contact-Details-Container" *ngIf="ContactButton">
+                <div class="Contact-Details" *ngFor="let contact of ContactDetails">
+                    <h3 class="Nmae">{{contact.ContactName | titlecase}}</h3>
+                    <Address class="Address" >{{contact.ContactDetails | titlecase}}</Address>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="DetailsForm" *ngIf="ContactButton">
+        <div class="forms">
+            <form #Form="ngForm" (ngSubmit)="SaveForm(Form)" novalidate>
+                <div class="row">
+                    <label class="Lebal">Your Name</label>
+                    <input type="text" required pattern="^[A-Za-z0-9 .]+$" maxlength="50" name="YourName" #YourName="ngModel"
+                        [(ngModel)]="FormDeatils.YourName"
+                        [ngClass]="{'TextBox':true, 'isError' : (ButtonClick && YourName.errors)}"
+                        placeholder="Your Name..." ngModel>
+                </div>
+                <div class="errorMessage" *ngIf="ButtonClick">
+                    <div class="requried" *ngIf="YourName.errors && YourName.errors['required']">Name is Mandatory</div>
+                    <div class="valid" *ngIf="YourName.errors && YourName.errors['pattern']">Name Should be Contain Alphanumeric Characters Only.</div>
+                </div>
+                <div class="row">
+                    <label class="Lebal">Your E-Mail</label>
+                    <input type="email" required pattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$" maxlength="70"
+                        #YourEmail="ngModel" name="YourEmail" [(ngModel)]="FormDeatils.YourEmail"
+                        [ngClass]="{'TextBox':true, 'isError' : (ButtonClick && YourEmail.errors)}"
+                        placeholder="Your Email..." ngModel>
+                    <div class="errorMessage" *ngIf="ButtonClick">
+                        <div class="requried" *ngIf="YourEmail.errors && YourEmail.errors['required']">E-Mail is
+                            Mandatory</div>
+                        <div class="valid" *ngIf="YourEmail.errors && YourEmail.errors['pattern']">Please Enter Valid E-mail ID</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="Lebal">Your Message</label>
+                    <textarea type="text" required pattern="^[A-Za-z0-9!@#$%^&*( )_+-]+$" maxlength="500" 
+                    #YourMessage="ngModel" 
+                    name="Message" cols="40" rows="7"
+                        [(ngModel)]="FormDeatils.YourMessage"
+                        [ngClass]="{'Message':true, 'isError' : (ButtonClick && YourMessage.errors)}"
+                        placeholder="Your Message..." ngModel> </textarea>
+                </div>
+                <div class="errorMessage" *ngIf="ButtonClick">
+                    <div class="requried" *ngIf="YourMessage.errors && YourMessage.errors['required']">Message is
+                        Mandatory</div>
+                    <div class="valid" *ngIf="YourMessage.errors && YourMessage.errors['pattern']">Message Should be Contain Alphanumericspecial Characters Only.</div>
+                </div>
+                <button class="button">SEND<mat-icon [className]="Left">arrow_right_alt</mat-icon></button>
+                <div class="SuccessMessage" *ngIf="IsSubmit">
+                    <div class="Success">{{SuccessMessage}}</div>
+                </div>
+                <div class="SuccessMessage" *ngIf="Error">
+                    <div class="Error">{{SuccessMessage}}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

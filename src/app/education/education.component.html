@@ -1,0 +1,17 @@
+<div class="Main-Container Slide-Container">
+    <div class="TextArea">
+        <h2 class="Text">Education</h2>
+        <div class="buttons" *ngIf="IsRightScreen && IsMobile">
+        <button class="Button-Left" (click)="LeftClick()"><mat-icon [className]="Left">arrow_right_alt</mat-icon></button>
+        <button class="Button-Right" (click)="RightClick()"><mat-icon [className]="Right">arrow_right_alt</mat-icon></button>
+    </div>
+    </div>
+    <div class="Details-Container">
+        <div class="Education-Details" *ngFor="let EducationDetails of EducationDetails">
+            <h5 class="Year">{{EducationDetails.Year | titlecase}}</h5>
+            <h4 class="Institute">{{EducationDetails.Name | titlecase}}</h4>
+            <h3 class="Course-Name">{{EducationDetails.CourseName | titlecase}}</h3>
+            <p [innerHTML]="EducationDetails.Description" class="Description"></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.Userdetails {
+    padding: 0rem 0rem 0rem 1.5vw;
+    margin: 1vw 0rem 1vw 0vw;
+    width: min(var(--Photo-Size));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.SocialMedias {
+    margin: 0vw 2vw 0vw 0vw ;
+}
+
+
+/* ------------------- Media Query ----------------------------- */
+
+@media (min-width:500px) {
+    .SocialMedias {
+        width: min(var(--Photo-Size)/4);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width:500px) {
+    .UserName {
+        padding: 0rem 0rem 0rem 0vw;
+    }
+}

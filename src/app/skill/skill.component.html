@@ -1,0 +1,37 @@
+<div class="Main-Container Slide-Container">
+    <div class="TextArea">
+        <div class="Text">{{BoxText | titlecase}}</div>
+    </div>
+    <div class="Skill-Details-Container">
+        <div class="Skill-Content">
+            <div class="Skill-buttons">
+                <button [ngClass]="{'Button':true, 'selectedButton' : (Skill.SkillType === SelectButton)}"
+                    (click)="ChangeData(Skill)" *ngFor="let Skill of SkillType">{{Skill.SkillType | uppercase}}</button>
+            </div>
+            <div class="Skills">
+                <div class="skillName Fade-animation" *ngFor="let Skill of SkillName">
+                    <div class="mainFlip" (mouseenter) ="mouseEnter()"  (mouseleave) ="mouseLeave()">
+                        <div class="filp">
+                            <div class="bottom">
+                                <div class="Progress">
+                                <!-- <mat-progress-spinner value="{{Skill.Progress}}" strokeWidth="{{Stroke}}" diameter="{{Diameter}}" 
+                                mode="determinate"></mat-progress-spinner> -->
+                                <circle-progress
+                                    [percent]="Skill.Progress" [radius]="Diameter" [outerStrokeWidth]="Stroke" [innerStrokeWidth]="0" 
+                                    [subtitle]="Skill.Skill" [outerStrokeColor]="'rgb(0, 120, 212)'" [animation]="animationStart" [animationDuration]="1000"
+                                ></circle-progress>
+                                <!-- <div class="percentage"><span class="PerText">{{Skill.Progress | split}}</span></div> -->
+                                </div>
+                                <!-- <div class="skilled">{{Skill.Skill | uppercase}}</div> -->
+                            </div>
+                            <div class="upper">
+                                <img class="SkillImg" alt="Skill_Image" src="{{Skill.Icon}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ImgBack"><img class="Skill_img" alt="User-Photo" src="{{path}}"></div>
+    </div>
+</div>

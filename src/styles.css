@@ -1,0 +1,206 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --Photo-Size: 95vw;
+  --Button-Text-Color: rgb(255, 255, 255);
+  --Button-background-Color: rgb(0, 120, 212);
+  --Text-Color: rgb(255, 255, 255);
+  --Main-Text-Color: rgb(26, 26, 26);
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: max(0.651043vw, 7px);
+  color: rgb(26, 26, 26);
+}
+
+#All-Content{
+    scroll-behavior: smooth;
+    transition: all 5s ease-in-out;
+}
+
+
+.UserName {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  font-family: 'Pangolin', cursive;
+  cursor: pointer;
+  padding: 0rem 0rem 0rem 7vw;
+}
+
+.SocialMedia {
+  font-size: 1.4rem;
+  font-weight: 500;
+  opacity: 0.65;
+  text-align: center;
+  letter-spacing: 0.14rem;
+  line-height: 2.1rem;
+  color: var(--Button-background-Color);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.SocialMedia:hover {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.Main-Container {
+  margin: 5vw 0vw;
+  padding: 0vw 10vw;
+}
+
+
+.Slide-Container {
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+}
+
+.Text {
+  font-size: 4.0rem;
+  font-weight: 800;
+  line-height: 7.2rem;
+  text-align: center;
+  color: var(--Button-Text-Color);
+}
+
+.TextArea {
+  width: 27em;
+  height: 7.2em;
+  background-color: var(--Main-Text-Color);
+  border-radius: 1.25em;
+  border: 0rem;
+}
+
+.buttons {
+  margin: -3.3vw 0rem 0rem 70vw;
+}
+
+.Button-Right,
+.Button-Left {
+  position: absolute;
+  margin: 0rem 0rem 0rem 5em;
+  width: 3.7rem;
+  height: 3.7rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--Button-background-Color);
+  background-color: var(--Button-Text-Color);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.Button-Left {
+  margin: 0rem 0rem 0rem 0rem;
+  transform: rotate(180deg);
+}
+
+.Button-Right:hover,
+.Button-Left:hover {
+  opacity: 1;
+  border: 0.225rem solid var(--Button-background-Color);
+}
+
+.Left{
+  font-size: 2.4rem;
+}
+
+.Right{
+  font-size: 2.4rem;
+}
+
+.mat-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.Details-Container {
+  display: grid;
+  grid-template-columns: repeat(3, 31%);
+  gap: 1.75%;
+  grid-auto-flow: column;
+  grid-auto-columns: 30%;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.Details-Container::-webkit-scrollbar {
+  width: 0rem;
+}
+
+.Year {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.Institute {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+
+.Course-Name {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 3.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.93
+}
+
+.Description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+
+
+
+/* -------------------- Animations ------------------------------------ */
+
+.Fade-animation{
+  animation: fade-in 800ms forwards ease-in-out;
+}
+
+@keyframes fade-in{
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
+  }
+}
+
+
+
+/* ------------------- Media Query ----------------------------- */
+
+@media (max-width:500px) {
+  .Main-Container {
+    margin: 5vw 0vw;
+    padding: 0vw 2vw;
+  }
+
+  .Details-Container {
+    grid-template-columns: repeat(1, 97%);
+    grid-auto-columns: 98%;
+  }
+}
+
+@media (max-width:720px) and (min-width:500px) {
+  .Details-Container {
+    grid-template-columns: repeat(2, 48%);
+    grid-auto-columns: 48%;
+  }
+}

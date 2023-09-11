@@ -1,0 +1,28 @@
+<app-photo-area (contactMe)="buttonClick=$event" id="Introduction"></app-photo-area>
+
+<nav id="Main-Navgation">
+    <app-mid-nav></app-mid-nav>
+</nav>
+
+<main>
+    <app-about id="About"></app-about>
+
+    <app-education id="Education" [IsMobile]="isMobile"></app-education>
+
+    <app-experience id="Experience" [IsMobile]="isMobile"></app-experience>
+
+    <app-skill id="Skills"></app-skill>
+
+    <app-achievement id="Projects" [IsMobile]="isMobile"></app-achievement>
+
+    <app-extracurricular id="Contact-Details" [ContactButton]="buttonClick"></app-extracurricular>
+
+</main>
+
+<footer id="Footer">
+    <app-footer></app-footer>
+</footer>
+
+<div id="Sticky-NavBar" class="Fade-animation" *ngIf="MainNavBar">
+    <app-navigationbar></app-navigationbar>
+</div>

@@ -1,0 +1,25 @@
+<div class="Photo-Main-Container">
+    <div class="Userdetails">
+        <h1 class="UserName">{{UserName | titlecase}}</h1>
+        <a href="#ContactMeButton"><button class="Button" (click)="ButtonClick()">{{ButtonText | uppercase}}</button></a>
+    </div>
+    <div class="Photo-Container Fade-animation">
+        <div class="image-Container">
+            <div class="skill"><img [ngClass]="CssClass" alt="User-Photo" src={{path}}>
+                <div class="Skill-Container" *ngIf="LargeScreen">
+                    <h1 [ngClass]="{'about':true, 'Main-Box' : (feature === CenterValue)}"
+                        *ngFor='let feature of Feature'>
+                        <span
+                            [ngClass]="{'Count' : true, 'Main-Count' : (feature === CenterValue)}">{{feature.Count}}</span>{{feature.Name
+                        | titlecase}}
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="SocialMedia-Container">
+            <a *ngFor='let social of SocialMedia' class="SocialMedia" href={{social.link}} target="_blank">{{social.Name
+                |
+                lowercase}}</a>
+        </div>
+    </div>
+</div>

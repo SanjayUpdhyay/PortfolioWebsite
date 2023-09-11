@@ -1,0 +1,6 @@
+<div class="Mid-navigation Sticky-Navigation fixed-nav">
+<div *ngIf="IsLargeScreen" class="Nav-UserName">{{UserName | titlecase}}</div>
+<ul [ngClass]="MainList" >
+   <li  *ngFor='let Navlist of navItem' type="none"><a [ngClass]="List" href="{{Navlist.id}}">{{Navlist.Name | uppercase}}</a></li>
+</ul>
+</div>

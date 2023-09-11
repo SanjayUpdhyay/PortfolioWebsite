@@ -1,0 +1,83 @@
+.Mid-navigation {
+    padding: 0vw 10vw;
+}
+
+.Sticky-Navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: max(3vw);
+    background-color: var(--Button-Text-Color);
+}
+
+.Nav-UserName {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+    font-family: 'Pangolin', cursive;
+    cursor: pointer;
+  }
+
+.fixed-nav {
+    position: fixed;
+    left: 0;
+    width: 100%;
+}
+
+.Nav-MainList {
+    display: flex;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.Nav-list {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Nav-list:hover{
+    color: var(--Button-background-Color);
+    transition: 0.5s;
+}
+
+.Nav-list::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: .165rem;
+    background-color: var(--Button-background-Color);
+    transition: width 0.5s;
+}
+
+.Nav-list:hover:after {
+    width: 100%;
+    transition: width 0.5s;
+}
+
+/* ------------- Media Query ------------------------------ */
+
+@media (max-width:500px) {
+    .Sticky-Navigation {
+        height: max(3vh);
+        justify-content: center;
+    }
+
+    .fixed-nav {
+        bottom: 0;
+    }
+}
+
+@media (min-width:500px) {
+    .fixed-nav {
+        top: 0;
+    }
+}
+
+@media (max-width:1024px) and (min-width:500px) {
+    .Sticky-Navigation {
+        height: max(4vh);
+    }
+}
